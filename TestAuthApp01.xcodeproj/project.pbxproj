@@ -22,6 +22,9 @@
 		020960F22BE935770002E546 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020960F12BE935770002E546 /* SettingsView.swift */; };
 		020960F62BE954B50002E546 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020960F52BE954B50002E546 /* Utilites.swift */; };
 		020960F82BE9D0620002E546 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020960F72BE9D0620002E546 /* SignInGoogleHelper.swift */; };
+		020960FA2BE9E6C10002E546 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020960F92BE9E6C10002E546 /* Launch Screen.storyboard */; };
+		020960FC2BE9EE980002E546 /* SignInWithGoogleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020960FB2BE9EE980002E546 /* SignInWithGoogleButtonView.swift */; };
+		020961012BEA09870002E546 /* PhotoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961002BEA09870002E546 /* PhotoEditorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		020960F32BE9511D0002E546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		020960F52BE954B50002E546 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		020960F72BE9D0620002E546 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
+		020960F92BE9E6C10002E546 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		020960FB2BE9EE980002E546 /* SignInWithGoogleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogleButtonView.swift; sourceTree = "<group>"; };
+		020961002BEA09870002E546 /* PhotoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +64,10 @@
 		020960C12BE8D9F00002E546 = {
 			isa = PBXGroup;
 			children = (
-				020960CC2BE8D9F00002E546 /* TestAuthApp01 */,
-				020960CB2BE8D9F00002E546 /* Products */,
+				020960F92BE9E6C10002E546 /* Launch Screen.storyboard */,
 				020960E52BE8E9500002E546 /* Frameworks */,
+				020960CB2BE8D9F00002E546 /* Products */,
+				020960CC2BE8D9F00002E546 /* TestAuthApp01 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +85,10 @@
 				020960E32BE8E14C0002E546 /* GoogleService-Info.plist */,
 				020960F32BE9511D0002E546 /* Info.plist */,
 				020960CF2BE8D9F00002E546 /* ContentView.swift */,
+				020960EF2BE926C20002E546 /* RootView.swift */,
 				020960CD2BE8D9F00002E546 /* TestAuthApp01App.swift */,
 				020960D12BE8D9F20002E546 /* Assets.xcassets */,
+				020960FF2BEA09170002E546 /* App */,
 				020960E82BE8EC9C0002E546 /* Auth */,
 				020960D32BE8D9F20002E546 /* Preview Content */,
 				020960F42BE954900002E546 /* Utilites */,
@@ -105,12 +114,8 @@
 		020960E82BE8EC9C0002E546 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				020960EF2BE926C20002E546 /* RootView.swift */,
-				020960E92BE8ECBA0002E546 /* AuthenticationView.swift */,
-				020960EB2BE8EDFC0002E546 /* SignInEmailView.swift */,
-				020960ED2BE8EFD30002E546 /* AuthenticationManager.swift */,
-				020960F12BE935770002E546 /* SettingsView.swift */,
-				020960F72BE9D0620002E546 /* SignInGoogleHelper.swift */,
+				020960FE2BEA08E90002E546 /* ViewModel */,
+				020960FD2BEA08940002E546 /* View */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -121,6 +126,58 @@
 				020960F52BE954B50002E546 /* Utilites.swift */,
 			);
 			path = Utilites;
+			sourceTree = "<group>";
+		};
+		020960FD2BEA08940002E546 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				020960E92BE8ECBA0002E546 /* AuthenticationView.swift */,
+				020960FB2BE9EE980002E546 /* SignInWithGoogleButtonView.swift */,
+				020960EB2BE8EDFC0002E546 /* SignInEmailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		020960FE2BEA08E90002E546 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				020960ED2BE8EFD30002E546 /* AuthenticationManager.swift */,
+				020960F72BE9D0620002E546 /* SignInGoogleHelper.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		020960FF2BEA09170002E546 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				020961042BEA2C4A0002E546 /* ViewModel */,
+				020961032BEA2C440002E546 /* View */,
+				020961022BEA2C3D0002E546 /* Model */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		020961022BEA2C3D0002E546 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		020961032BEA2C440002E546 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				020960F12BE935770002E546 /* SettingsView.swift */,
+				020961002BEA09870002E546 /* PhotoEditorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		020961042BEA2C4A0002E546 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +249,7 @@
 			files = (
 				020960D52BE8D9F20002E546 /* Preview Assets.xcassets in Resources */,
 				020960D22BE8D9F20002E546 /* Assets.xcassets in Resources */,
+				020960FA2BE9E6C10002E546 /* Launch Screen.storyboard in Resources */,
 				020960E42BE8E14C0002E546 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +263,8 @@
 			files = (
 				020960F22BE935770002E546 /* SettingsView.swift in Sources */,
 				020960D02BE8D9F00002E546 /* ContentView.swift in Sources */,
+				020960FC2BE9EE980002E546 /* SignInWithGoogleButtonView.swift in Sources */,
+				020961012BEA09870002E546 /* PhotoEditorView.swift in Sources */,
 				020960CE2BE8D9F00002E546 /* TestAuthApp01App.swift in Sources */,
 				020960F02BE926C20002E546 /* RootView.swift in Sources */,
 				020960F82BE9D0620002E546 /* SignInGoogleHelper.swift in Sources */,
@@ -352,6 +412,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -382,6 +443,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
