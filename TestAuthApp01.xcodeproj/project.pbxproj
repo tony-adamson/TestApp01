@@ -24,7 +24,6 @@
 		020960F82BE9D0620002E546 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020960F72BE9D0620002E546 /* SignInGoogleHelper.swift */; };
 		020960FA2BE9E6C10002E546 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020960F92BE9E6C10002E546 /* Launch Screen.storyboard */; };
 		020960FC2BE9EE980002E546 /* SignInWithGoogleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020960FB2BE9EE980002E546 /* SignInWithGoogleButtonView.swift */; };
-		020961012BEA09870002E546 /* PhotoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961002BEA09870002E546 /* PhotoEditorView.swift */; };
 		020961832BECC8840002E546 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961822BECC8840002E546 /* SettingsViewModel.swift */; };
 		020961852BECC9CB0002E546 /* PhotoFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961842BECC9CB0002E546 /* PhotoFilterView.swift */; };
 		020961872BECCA410002E546 /* PhotoPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961862BECCA410002E546 /* PhotoPickerViewModel.swift */; };
@@ -35,6 +34,8 @@
 		020961912BECD9D60002E546 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961902BECD9D60002E546 /* ImagePicker.swift */; };
 		020961932BECDA020002E546 /* DrawingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961922BECDA020002E546 /* DrawingScreen.swift */; };
 		020961952BECF57C0002E546 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961942BECF57C0002E546 /* SignInViewModel.swift */; };
+		020961972BED10F60002E546 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961962BED10F60002E546 /* Spinner.swift */; };
+		020961992BED303A0002E546 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020961982BED30390002E546 /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +55,6 @@
 		020960F72BE9D0620002E546 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 		020960F92BE9E6C10002E546 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		020960FB2BE9EE980002E546 /* SignInWithGoogleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogleButtonView.swift; sourceTree = "<group>"; };
-		020961002BEA09870002E546 /* PhotoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorView.swift; sourceTree = "<group>"; };
 		020961822BECC8840002E546 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		020961842BECC9CB0002E546 /* PhotoFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilterView.swift; sourceTree = "<group>"; };
 		020961862BECCA410002E546 /* PhotoPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewModel.swift; sourceTree = "<group>"; };
@@ -65,6 +65,8 @@
 		020961902BECD9D60002E546 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		020961922BECDA020002E546 /* DrawingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingScreen.swift; sourceTree = "<group>"; };
 		020961942BECF57C0002E546 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		020961962BED10F60002E546 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		020961982BED30390002E546 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				020960F52BE954B50002E546 /* Utilites.swift */,
+				020961962BED10F60002E546 /* Spinner.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				020960ED2BE8EFD30002E546 /* AuthenticationManager.swift */,
 				020960F72BE9D0620002E546 /* SignInGoogleHelper.swift */,
 				020961942BECF57C0002E546 /* SignInViewModel.swift */,
+				020961982BED30390002E546 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				020960F12BE935770002E546 /* SettingsView.swift */,
-				020961002BEA09870002E546 /* PhotoEditorView.swift */,
 				020961842BECC9CB0002E546 /* PhotoFilterView.swift */,
 				020961882BECD05E0002E546 /* FilterView.swift */,
 				0209618A2BECD88C0002E546 /* ImageEditorView.swift */,
@@ -295,13 +298,14 @@
 				020960D02BE8D9F00002E546 /* ContentView.swift in Sources */,
 				020960FC2BE9EE980002E546 /* SignInWithGoogleButtonView.swift in Sources */,
 				020961872BECCA410002E546 /* PhotoPickerViewModel.swift in Sources */,
-				020961012BEA09870002E546 /* PhotoEditorView.swift in Sources */,
 				0209618B2BECD88C0002E546 /* ImageEditorView.swift in Sources */,
 				020960CE2BE8D9F00002E546 /* TestAuthApp01App.swift in Sources */,
 				020961912BECD9D60002E546 /* ImagePicker.swift in Sources */,
+				020961992BED303A0002E546 /* AuthenticationViewModel.swift in Sources */,
 				020961952BECF57C0002E546 /* SignInViewModel.swift in Sources */,
 				020960F02BE926C20002E546 /* RootView.swift in Sources */,
 				020960F82BE9D0620002E546 /* SignInGoogleHelper.swift in Sources */,
+				020961972BED10F60002E546 /* Spinner.swift in Sources */,
 				020961932BECDA020002E546 /* DrawingScreen.swift in Sources */,
 				020960F62BE954B50002E546 /* Utilites.swift in Sources */,
 				0209618F2BECD9AE0002E546 /* TextBox.swift in Sources */,

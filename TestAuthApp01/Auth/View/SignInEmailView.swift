@@ -14,16 +14,19 @@ struct SignInEmailView: View {
     
     var body: some View {
         VStack {
+            // Textfield email
             TextField("Email...", text: $viewModel.email)
                 .padding()
                 .background(.appLightGray)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             
+            // Textfield password
             SecureField("Password...", text: $viewModel.password)
                 .padding()
                 .background(.appLightGray)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             
+            // Button
             Button {
                 Task {
                     do {

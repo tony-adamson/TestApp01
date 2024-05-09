@@ -70,7 +70,14 @@ extension AuthenticationManager {
     @discardableResult
     func createUser(email: String, password: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
-        return AuthDataResultModel(user: authDataResult.user)
+        let user = authDataResult.user
+        do {
+            try await sendEmailVerification(to: user)
+            return AuthDataResultModel(user: user)
+        } catch {
+            throw error
+        }
+//        return AuthDataResultModel(user: authDataResult.user)
     }
     
     @discardableResult
@@ -96,6 +103,18 @@ extension AuthenticationManager {
         }
         try await user.updateEmail(to: email)
     }
+    
+    func sendEmailVerification(to user: User) async throws {
+        guard user.email != nil else {
+            throw URLError(.badURL)
+        }
+
+        do {
+            try await user.sendEmailVerification()
+        } catch {
+            throw error
+        }
+    }
 }
 
 
@@ -108,8 +127,15 @@ extension AuthenticationManager {
         return try await signIn(credential: credential)
     }
     
+    // MARK: Place to add check verified or not
     func signIn(credential: AuthCredential) async throws -> AuthDataResultModel{
         let authDataResult = try await Auth.auth().signIn(with: credential)
+        
+//        let user = authDataResult.user
+//        if !user.isEmailVerified {
+//            throw NSError(domain: "AuthError", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Please verify your email address."])
+//        }
+        
         return AuthDataResultModel(user: authDataResult.user)
     }
 }

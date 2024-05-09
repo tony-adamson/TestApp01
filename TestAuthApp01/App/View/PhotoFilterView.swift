@@ -18,6 +18,7 @@ struct PhotoFilterView: View {
         NavigationStack {
             VStack {
                 
+                // Image
                 if let image = viewModel.selectedImage {
                     Image(uiImage: image)
                         .resizable()
@@ -47,8 +48,7 @@ struct PhotoFilterView: View {
                     }
                 }
                 
-                
-                
+                // Button to call photo picker
                 PhotosPicker(selection: $viewModel.imageSelection, matching: .images) {
                     Text("Add image to edit")
                         .padding()
@@ -59,22 +59,26 @@ struct PhotoFilterView: View {
                 }
                 .padding(.bottom, 16)
             }
-            .navigationTitle("Photo Filter")
-            .padding()
-            .toolbar(content: {
-                Button(action: {
-                    viewModel.saveImageToGallery()
-                }, label: {
-                    Text("Save")
-                })
-                
-                Button(action: {
-                    viewModel.selectedImage = nil
-                }, label: {
-                    Text("Cancel")
-                })
-            })
         }
+        .navigationTitle("Photo Filter")
+        .padding()
+        .toolbar(content: {
+            // Save button
+            // TODO: Add alert
+            Button(action: {
+                viewModel.saveImageToGallery()
+            }, label: {
+                Text("Save")
+            })
+            
+            // Cancel button and clear view
+            Button(action: {
+                viewModel.selectedImage = nil
+            }, label: {
+                Text("Cancel")
+            })
+        })
+        
     }
 }
 

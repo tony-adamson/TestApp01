@@ -15,6 +15,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List {
+                // Button
                 Button("Log Out") {
                     Task {
                         do {
@@ -25,6 +26,8 @@ struct SettingsView: View {
                         }
                     }
                 }
+                
+                // Additional section
                 if viewModel.authProviders.contains(.email) {
                     emailSection
                 }

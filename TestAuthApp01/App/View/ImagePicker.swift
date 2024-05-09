@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Alternative picker
+// TODO: Change to normal picker
 struct ImagePicker: UIViewControllerRepresentable {
     
     @Binding var showPicker: Bool

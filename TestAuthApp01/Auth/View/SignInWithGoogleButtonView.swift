@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Google login button
 struct SignInWithGoogleButtonView: View {
     var action: () -> Void
         
