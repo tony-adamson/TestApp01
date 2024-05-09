@@ -27,9 +27,21 @@ struct AuthenticationView: View {
     @Binding var showSignInView: Bool
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            
+            Image("mainimage")
+                .resizable()
+                .scaledToFit()
+            
+            Spacer()
+            
             Text("Please sign in via email or Google")
+                .font(.headline)
+                .foregroundStyle(.appDarkGray)
+                .padding(.bottom, 16)
+            
             VStack(spacing: 16) {
+                
                 NavigationLink {
                     SignInEmailView(showSignInView: $showSignInView)
                 } label: {
@@ -42,15 +54,13 @@ struct AuthenticationView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 
-                //TODO: Need customization
-                //                GoogleSignInButton(viewModel:
-                //                                    GoogleSignInButtonViewModel(
-                //                                        scheme: .light,
-                //                                        style: .wide,
-                //                                        state: .normal
-                //                                    )
-                //                )
-                
+                HStack {
+                    VStack { Divider() }
+                    Text("or")
+                        .font(.headline)
+                        .foregroundStyle(.appDarkGray)
+                    VStack { Divider() }
+                }
                 
                 SignInWithGoogleButtonView {
                     Task {
@@ -63,15 +73,10 @@ struct AuthenticationView: View {
                     }
                 }
             }
-        
-            
-            
             Spacer()
         }
         .padding()
-        .navigationTitle("Welcome, user!")
-        .background(.appBlack)
-        .foregroundStyle(.white)
+        .navigationTitle("Welcome!")
     }
 }
 

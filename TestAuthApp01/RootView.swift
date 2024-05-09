@@ -14,8 +14,15 @@ struct RootView: View {
     var body: some View {
         ZStack {
             if !showSignInView {
-                NavigationStack {
+                TabView {
+                    PhotoFilterView()
+                        .tabItem { Label("Filter", systemImage: "camera.filters") }
+                    
+                    ImageEditorView()
+                        .tabItem { Label("Draw!", systemImage: "paintbrush") }
+                    
                     SettingsView(showSignInView: $showSignInView)
+                        .tabItem { Label("Settings", systemImage: "gear") }
                 }
             }
         }

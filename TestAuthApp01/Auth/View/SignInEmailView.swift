@@ -7,30 +7,6 @@
 
 import SwiftUI
 
-@MainActor
-final class SignInViewModel: ObservableObject {
-    @Published var email = ""
-    @Published var password = ""
-    
-    func signUp() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("Not email or password found")
-            return
-        }
-        
-        let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-    }
-    
-    func signIn() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("Not email or password found")
-            return
-        }
-        
-        let returnedUserData = try await AuthenticationManager.shared.signInUser(email: email, password: password)
-    }
-}
-
 struct SignInEmailView: View {
     
     @StateObject private var viewModel = SignInViewModel()
@@ -40,12 +16,12 @@ struct SignInEmailView: View {
         VStack {
             TextField("Email...", text: $viewModel.email)
                 .padding()
-                .background(.gray.opacity(0.4))
+                .background(.appLightGray)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             
             SecureField("Password...", text: $viewModel.password)
                 .padding()
-                .background(.gray.opacity(0.4))
+                .background(.appLightGray)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             
             Button {
@@ -72,7 +48,7 @@ struct SignInEmailView: View {
                     .foregroundStyle(.white)
                     .frame(height: 55)
                     .frame(maxWidth: .infinity)
-                    .background(.blue)
+                    .background(.appBlue)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             
